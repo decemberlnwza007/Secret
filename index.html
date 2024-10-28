@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <body>
+        <div class="success-animation"></div>
+        <div class="login-container">
+            <div class="stars">✧</div>
+            <h2>ยินดีต้อนรับ</h2>
+            <p class="subtitle">เข้าสู่ระบบเพื่อเริ่มต้นใช้งาน</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">ชื่อผู้ใช้งาน</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" placeholder="กรุณากรอกชื่อผู้ใช้งาน" required>
+                        <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="กรุณากรอกรหัสผ่าน" required>
+                        <span class="input-icon password-toggle"><i class="fa-solid fa-lock"></i></span>
+                    </div>
+                    <div class="strength-meter">
+                        <div></div>
+                    </div>
+                </div>
+    
+                <button type="submit">เข้าสู่ระบบ</button>
+    
+                <div class="links">
+                    <a href="register.html" class="register-link">ลงทะเบียน</a>
+                    <a href="#" class="forgot-link">ลืมรหัสผ่าน?</a>
+                </div>
+            </form>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</body>
+</html>

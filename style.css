@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 50%, #faf5ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-bubble {
+    position: absolute;
+    background: linear-gradient(45deg, #818cf8, #6366f1);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 15s infinite linear;
+    opacity: 0.1;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(400px, -400px) rotate(360deg); }
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 
+        0 10px 25px rgba(99, 102, 241, 0.1),
+        0 6px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #818cf8, #6366f1, #818cf8);
+}
+
+.stars {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #818cf8, #6366f1);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+h2 {
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+    position: relative;
+}
+
+label {
+    display: block;
+    color: #4b5563;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.75rem;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 300;
+    padding-right: 2.5rem;
+}
+
+input:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.1);
+}
+
+.input-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+input:focus + .input-icon {
+    color: #6366f1;
+}
+
+.password-toggle {
+    cursor: pointer;
+}
+
+.strength-meter {
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    display: none;
+}
+
+.strength-meter div {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, #818cf8, #6366f1);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+button:hover::after {
+    left: 100%;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.links a {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #818cf8, #6366f1);
+    transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+.success-animation {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 102, 241, 0.2);
+    z-index: 1000;
+}
+
+@keyframes success {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
